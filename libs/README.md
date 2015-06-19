@@ -1,0 +1,1 @@
+This is the main dir with libraries and frameworks used in this app.
