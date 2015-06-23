@@ -1,0 +1,28 @@
+<div class="container" id="notes">
+    <div class="ntaw-notes__wrap">
+        <div class="ntaw-notes clearfix" data-bind="template: { name: 'notes-tmpl', foreach: notes }"></div>
+    </div>
+
+    <form method="post" action="/addNote" class="ntaw-notes__add" id="notesAdd">
+        <input type="hidden" name="date"/>
+        <div class="form-group">
+            <label>Text note</label>
+            <textarea name="name" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Who are you?)</label>
+            <input type="text" name="author" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success" data-bind="click: addNotes">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script type="text/html" id="notes-tmpl">
+    <div class="ntaw-note col-xs-12" data-bind="attr: { 'data-id': id }">
+        <div class="col-xs-4" data-bind="text: name"></div>
+        <div class="col-xs-4" data-bind="text: date"></div>
+        <div class="col-xs-4" data-bind="text: author"></div>
+    </div>
+</script>
