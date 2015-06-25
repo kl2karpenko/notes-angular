@@ -3,26 +3,48 @@
         <div class="ntaw-notes clearfix" data-bind="template: { name: 'notes-tmpl', foreach: notes }"></div>
     </div>
 
-    <form method="post" action="/addNote" class="ntaw-notes__add" id="notesAdd">
-        <input type="hidden" name="date"/>
-        <div class="form-group">
-            <label>Text note</label>
-            <textarea name="name" class="form-control"></textarea>
-        </div>
-        <div class="form-group">
-            <label>Who are you?)</label>
-            <input type="text" name="author" class="form-control"/>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-success" data-bind="click: addNotes">Submit</button>
-        </div>
-    </form>
+    <div class="ntaw-notes__form">
+
+        <form method="post" action="/addNote" class="ntaw-notes__add" id="notesAdd">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>Name your note</label>
+                        <input type="text" name="name" class="form-control"/>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label>Who are you?)</label>
+                        <input type="text" name="author" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Text note</label>
+                <textarea name="text" class="form-control"></textarea>
+            </div>
+            <div class="form-group text-right">
+                <button type="submit" class="btn btn-warning" data-bind="click: addNotes">Submit</button>
+            </div>
+        </form>
+
+    </div>
 </div>
 
 <script type="text/html" id="notes-tmpl">
-    <div class="ntaw-note col-xs-12" data-bind="attr: { 'data-id': id }">
-        <div class="col-xs-4" data-bind="text: name"></div>
-        <div class="col-xs-4" data-bind="text: date"></div>
-        <div class="col-xs-4" data-bind="text: author"></div>
+    <div class="ntaw-note row" data-bind="attr: { 'data-id': id }">
+        <div class="row">
+            <div class="col-xs-4 ntaw-note__name" data-bind="text: name"></div>
+            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-remove" aria-hidden="true" data-bind="click: $root.removeNote"></span>
+            <div class="col-xs-12">
+                <blockquote class="ntaw-note__text" data-bind="text: text"></blockquote>
+                <b class="ntaw-note__author pull-right">added by <span data-bind="text: author"></span></b>
+            </div>
+            <div class="col-xs-12 text-right">
+                <span class="ntaw-note__date" data-bind="text: date"></span>
+            </div>
+        </div>
     </div>
 </script>

@@ -1,5 +1,7 @@
 $(function () {
     $(".ntaw-page").mCustomScrollbar({
-        theme: "dark-thin"
+        theme: "minimal-dark",
+        updateOnContentResize: true,
+        scrollAmount: 200
     });
 });

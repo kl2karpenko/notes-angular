@@ -86,6 +86,15 @@ define(["dojo/_base/declare"], function(declare) {
 
             });
         },
+        removeNote: function (attr) {
+            console.log(arguments);
+            var id = attr.id;
+
+            /**
+             * Remove Note from list
+             */
+            $.post("/removeNote", { id: id });
+        },
 
         /**
          * Get list of notes from server

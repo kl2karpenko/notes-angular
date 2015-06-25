@@ -2,17 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-
-    <link rel="shortcut icon" type="image/png" href="jasmine_favicon.png">
-    <link rel="stylesheet" type="text/css" href="jasmine.css">
-
-    <script type="text/javascript" src="jasmine.js"></script>
-    <script type="text/javascript" src="jasmine-html.js"></script>
-    <script type="text/javascript" src="boot.js"></script>
+    <title>Notes App</title>
+    <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
 
+    <div class="ntaw-body">
+        <div class="navbar navbar-inverse ntaw-nav">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">NotesAwesome</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" id="ntawMenu" data-bind="foreach: listMenu">
+                        <li data-bind="css: { active: href == $root.active() }"><a data-bind="attr: {href: href}, text: name, click: $root.changeLocation">Notes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="ntaw-page">
+            <div class="ntaw-overflow" data-page="insert"></div>
+        </div>
+    </div>
+
+    <!-- Libraries -->
+    <script type="text/javascript">
+        var dojoConfig = {
+            async: false,
+            baseUrl: "./public",
+            parseOnLoad: false,
+            isDebug: false,
+            packages: [
+                {
+                    name: "app",
+                    location: "/js/mvvm/"
+                }
+            ]
+        };
+    </script>
+    <script type="text/javascript" src="js/lib.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.8.9/dojo/dojo.js"></script>
+
+        <!-- Routing -->
+    <script type="text/javascript" src="js/mvvm/routes.js"></script>
+        <!-- MV* -->
+    <script type="text/javascript" src="js/mvvm/start.js"></script>
 
 </body>
 </html>

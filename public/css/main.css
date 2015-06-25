@@ -326,7 +326,7 @@ h2,h3{page-break-after:avoid}
 .glyphicon-menu-up:before{content:"\e260"}
 *,:after,:before{box-sizing:border-box}
 html{font-size:10px;-webkit-tap-highlight-color:rgba(0,0,0,0)}
-body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333}
+body{font-size:14px;line-height:1.42857143;color:#333}
 button,input,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}
 a{color:#337ab7;text-decoration:none}
 a:focus,a:hover{color:#23527c;text-decoration:underline}
@@ -1702,9 +1702,21 @@ td.visible-print,th.visible-print{display:table-cell!important}}
 50%{opacity:1}
 100%{opacity:0}}
 body,html{height:100%}
-body{background-color:#f1f5f6}
+body{background-color:#f1f5f6;font-family:Tahoma}
 .ntaw-body{height:100%;width:100%;max-height:100%}
 .ntaw-page{position:absolute;top:55px;bottom:0;left:0;right:0;z-index:1}
-.ntaw-notes__wrap{margin:20px;box-shadow:0 0 3px #666;background-color:#fff}
-.ntaw-notes__add{margin:20px}
-.ntaw-note{padding:5px}
+.ntaw-page._notes{bottom:250px}
+.ntaw-nav{box-shadow:0 0 10px #666}
+.ntaw-notes__add,.ntaw-notes__wrap{margin:20px}
+.ntaw-notes__form{position:fixed;height:235px;bottom:0;left:0;right:0;background-color:#222;border-color:#080808;box-shadow:0 0 10px #666}
+.ntaw-notes__form label{color:#fff;font-weight:300}
+.ntaw-note{padding:10px;margin:10px 0;box-shadow:0 0 3px #ddd;background-color:#fff;position:relative}
+.ntaw-note .glyphicon{opacity:0;filter:alpha(opacity=0);-webkit-transition:all .5s linear;transition:all .5s linear;position:absolute;top:10px;z-index:2;font-size:16px}
+.ntaw-note .glyphicon:hover{cursor:pointer}
+.ntaw-note .glyphicon-pencil{right:37px;color:#31708f}
+.ntaw-note .glyphicon-remove{right:10px;color:#666;font-size:19px;top:8px}
+.ntaw-note:hover .glyphicon{opacity:1;filter:alpha(opacity=100)}
+.ntaw-note__name{font-weight:700;font-size:16px;color:#666}
+.ntaw-note__text{margin:15px}
+.ntaw-note__author{font-size:13px}
+.ntaw-note__author span{color:#f0ad4e;font-size:18px}

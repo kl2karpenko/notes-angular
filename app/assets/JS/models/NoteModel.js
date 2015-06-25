@@ -12,6 +12,7 @@ define(["dojo/_base/declare"], function(declare){
             this.author = obj.author;
             this.date = obj.date;
             this.id = obj.id;
+            this.text = obj.text || 'Text';
         }
     });
 });

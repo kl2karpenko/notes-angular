@@ -86,6 +86,15 @@ define(["dojo/_base/declare"], function(declare) {
 
             });
         },
+        removeNote: function (attr) {
+            console.log(arguments);
+            var id = attr.id;
+
+            /**
+             * Remove Note from list
+             */
+            $.post("/removeNote", { id: id });
+        },
 
         /**
          * Get list of notes from server
@@ -95,7 +104,7 @@ define(["dojo/_base/declare"], function(declare) {
             $.ajax({
                 type: "GET",
                 dataType: "json",
-                url: '/scripts/data/notes.json',
+                url: '/js/mvvm/data/notes.json',
                 async: false,
                 success: function (data) {
                     self.notes().length = 0;

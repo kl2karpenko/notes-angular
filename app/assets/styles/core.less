@@ -1,3 +1,5 @@
+@import 'plugins/bootstrap';
+@import 'plugins/jquery_mCustomScrollbar';
 @import 'less/mixins';
 
 html, body {
@@ -6,6 +8,7 @@ html, body {
 
 body {
   background-color: rgb(241, 245, 246);
+  font-family: Tahoma;
 }
 
 .ntaw {
@@ -22,8 +25,14 @@ body {
     left: 0;
     right: 0;
     z-index: 1;
+    
+    &._notes {
+      bottom: 250px;
+    }
+  }
 
-
+  &-nav {
+    .box-shadow(0 0 10px #666);
   }
 
   /* ================

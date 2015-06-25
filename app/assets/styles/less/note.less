@@ -1,15 +1,82 @@
 &-notes {
   &__wrap {
     margin: 20px;
-    .box-shadow(0 0 3px #666);
-    background-color: white;
   }
 
   &__add {
     margin: 20px;
   }
+  
+  &__form {
+    position: fixed;
+    height: 235px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #222;
+    border-color: #080808;
+    .box-shadow(0 0 10px #666);
+    
+    label {
+      color: #fff;
+      font-weight: 300;
+    }
+  }
 }
 
 &-note {
-  padding: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  .box-shadow(0 0 3px #ddd);
+  background-color: #fff;
+  position: relative;
+
+  .glyphicon {
+    .opacity(0);
+    .transition(all 0.5s linear);
+    position: absolute;
+    top: 10px;
+
+    z-index: 2;
+    font-size: 16px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .glyphicon-pencil {
+    right: 37px;
+    color: #31708f;
+  }
+  .glyphicon-remove {
+    right: 10px;
+    color: #666;
+    font-size: 19px;
+    top: 8px;
+  }
+
+  &:hover {
+    .glyphicon {
+      .opacity(1);
+    }
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #666;
+  }
+
+  &__text {
+    margin: 15px;
+  }
+
+  &__author {
+    font-size: 13px;
+    span {
+      color: #f0ad4e;
+      font-size: 18px;
+    }
+  }
 }
